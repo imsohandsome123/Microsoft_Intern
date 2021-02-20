@@ -1,6 +1,6 @@
 import json
 
-def search(name, method): # method = “article_title”, “content”, “messages”
+def search(name): # method = “article_title”, “content”, “messages”
 	result = []
 	for a_id, a_content in articles.items():
 		if name in a_content['article_title']:
@@ -9,10 +9,10 @@ def search(name, method): # method = “article_title”, “content”, “mess
 			result.append(a_id)
 		elif name in i['messages']:
 			result.append(a_id)
-	print(result)
+	return search
 
 with open('ptt_dump_20210218_1141.json') as f:
-  data = json.load(f)
+	data = json.load(f)
 
 articles = {}
 
